@@ -31,7 +31,9 @@ python app.py
 ## HOW TO USE?
 
 - Type the name of the anime for e.g. Bleach
-- Select the anime you want to download
+- Select the anime you want to download by providing respective number for e.g.
+  1 Bleach
+  2 Bleach: The Sealed Sword Frenzy
 - Provide the range you want to download
 - Downloaded anime folder will be present inside 'anime-downloader' folder.
 
@@ -39,4 +41,4 @@ python app.py
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Please make sure to update tests as appropriate.
+Report if you are facing any kind of issues so that it could be better.
