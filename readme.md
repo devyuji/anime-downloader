@@ -8,8 +8,8 @@ A CLI based downloader which take anime name and range of episode you specify
 - Install [Termux:API](https://play.google.com/store/apps/details?id=com.termux.api)
 
 ```bash
-apt install git
-apt install python
+pkg install git
+pkg install python
 git clone https://github.com/devyuji/anime-downloader.git
 cd anime-downloader
 pip install -r requirements.txt
@@ -36,6 +36,7 @@ python app.py
   2 Bleach: The Sealed Sword Frenzy
 - Provide the range you want to download
 - Downloaded anime folder will be present inside 'anime-downloader' folder.
+- To stop download Ctrl+C
 
 ## Contributing
 

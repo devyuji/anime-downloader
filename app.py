@@ -3,8 +3,8 @@ from bs4 import BeautifulSoup
 import wget
 
 def main():
-	anime_name = input('enter anime name: ')
-	URL = f"https://gogoanime.ai//search.html?keyword={anime_name}"
+	name = input('enter anime name: ')
+	URL = f"https://gogoanime.ai//search.html?keyword={name}"
 
 	html = rq.get(URL)
 
@@ -29,22 +29,26 @@ def main():
 
 	select_anime_name = int(input('choose anime: '))
 	anime_name = all_anime_name.get(select_anime_name)
-
-	anime_download(anime_name)	
+	if(anime_name):
+		anime_download(anime_name)
+	else:
+		print('wrong choice')
 
 def anime_download(anime_name):
 	input_from = int(input('from: '))
 	input_to = int(input('to: '))
 
+	anime_name = anime_name.replace(" ", '-')
 	for i in range(input_from, input_to + 1):
 		URL = f"https://gogoanime.ai/{anime_name}-episode-{i}"
 
 		html = rq.get(URL)
 		soup = BeautifulSoup(html.text, 'html.parser')
-
+		
 		download_btn = soup.find(class_='dowloads')
 		download_site = str(download_btn.find('a')['href'])
 
+		
 		html2 = rq.get(download_site)
 		soup2 = BeautifulSoup(html2.text, 'html.parser')
 
